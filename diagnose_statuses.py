@@ -8,6 +8,8 @@ Usage:
     python diagnose_statuses.py
 """
 
+from logging import config
+
 from jira_reports.config import get_config
 from jira_reports.extractor import JiraExtractor
 
@@ -49,8 +51,12 @@ def main():
     print("\n" + "=" * 60)
     print("YOUR CURRENT .env STATUS SETTINGS")
     print("=" * 60)
-    print(f"  RESOLVED_STATUSES = {config['resolved_statuses']}")
-    print(f"  IN_PROGRESS_STATUSES = {config['in_progress_statuses']}")
+    print(f"  FEATURE_RESOLVED_STATUSES    = {config['feature_resolved_statuses']}")
+    print(f"  FEATURE_IN_PROGRESS_STATUSES = {config['feature_in_progress_statuses']}")
+    print(f"  EPIC_RESOLVED_STATUSES       = {config['epic_resolved_statuses']}")
+    print(f"  EPIC_IN_PROGRESS_STATUSES    = {config['epic_in_progress_statuses']}")
+    print(f"  STORY_RESOLVED_STATUSES      = {config['story_resolved_statuses']}")
+    print(f"  STORY_IN_PROGRESS_STATUSES   = {config['story_in_progress_statuses']}")
 
     print("\n" + "=" * 60)
     print("Copy the output above and paste it so we can update your .env")
